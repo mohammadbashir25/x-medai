@@ -1,0 +1,11 @@
+
+const Page = () => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-4">
+
+
+    </div>
+  )
+}
+
+export default Page

@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* =========================
+     PRIMARY BRAND COLORS
+     ========================= */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: #48b500; /* Main brand color → buttons, links, highlights (bg-primary, text-primary) */
+  --color-primary-foreground: #ffffff; /* Text on primary → button text (text-primary-foreground) */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --color-secondary: #1f201f; /* Secondary brand → accents, badges (bg-secondary) */
+  --color-secondary-foreground: #ffffff; /* Text on secondary */
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-accent: #6cc823; /* Small highlights → icons, hover states (bg-accent) */
+  --color-accent-foreground: #ffffff;
+
+  /* =========================
+     BACKGROUND COLORS
+     ========================= */
+
+  --color-background: #0e0f0e; /* Main page background (bg-background) */
+  --color-foreground: #f8faf8; /* Main text color (text-foreground) */
+
+  --color-card: #1a1b1a; /* Cards, sections (bg-card) */
+  --color-card-foreground: #f1f3f1; /* Text inside cards */
+
+  --color-muted: #2b2c2b; /* Subtle backgrounds → inputs, muted sections (bg-muted) */
+  --color-muted-foreground: #9a9d9a; /* Secondary text, descriptions */
+
+  /* =========================
+     UI STATES
+     ========================= */
+
+  --color-border: #2b2c2b; /* Borders (border-border) */
+  --color-input: #1a1b1a; /* Input background (bg-input) */
+  --color-ring: #48b500; /* Focus ring (ring-ring) */
+
+  /* =========================
+     FEEDBACK COLORS
+     ========================= */
+
+  --color-success: #22c55e; /* Success messages (bg-success) */
+  --color-warning: #f59e0b; /* Warnings (bg-warning) */
+  --color-error: #ef4444; /* Errors (bg-error) */
+
+  /* =========================
+     CTA / SPECIAL
+     ========================= */
+
+  --color-cta: #48b500; /* Call-to-action buttons (bg-cta) */
+  --color-cta-foreground: #ffffff;
+
+  /* =========================
+     FOOTER
+     ========================= */
+
+  --color-footer: #050605; /* Footer background (bg-footer) */
+  --color-footer-foreground: #cfe6b8;
+
+  /* =========================
+     TYPOGRAPHY
+     ========================= */
+
+  --font-sans: "Inter", sans-serif; /* Main font → body text */
+  --font-heading: "Poppins", sans-serif; /* Headings */
+}
+/* Hero Title:     64–80px / font-bold
+Section Title:  36–48px / font-semibold
+Card Title:     18–22px / font-medium
+Body Text:      14–16px / font-normal
+Small Text:     12–13px / text-muted */
+
+
+
+@layer base{
+   body{
+      background: var(--color-background);
+      color: var(--color-foreground);
+   }
 }
