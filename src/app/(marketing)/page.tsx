@@ -1,11 +1,18 @@
+import Container from "../components/ui/Container";
+import Hero from "../section/Hero/Hero";
+import HowItWorksSection from "../section/HowWorks/HowItWorksSection";
+import ProblemSolutionSection from "../section/Problem-solution/ProblemSolutionSection";
 
 const Page = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-4">
-
-
+    <div className="">
+      <Container>
+        <Hero />
+        <ProblemSolutionSection />
+        <HowItWorksSection />
+      </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

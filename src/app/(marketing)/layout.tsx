@@ -1,4 +1,5 @@
-import Navbar from "../Layout/Navbar";
+import Navbar from "../Layout/Navbar/Navbar";
+import CursorGlow from "../components/effects/CursorGlow";
 
 export default function MarketingLayout({
   children,
@@ -7,8 +8,9 @@ export default function MarketingLayout({
 }) {
   return (
     <>
+      <CursorGlow />
       <Navbar />
-      {children}
+      <main className="pt-20">{children}</main>
     </>
   );
 }
