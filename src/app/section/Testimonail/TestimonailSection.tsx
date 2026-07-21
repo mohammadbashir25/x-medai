@@ -1,12 +1,14 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import ProcessStep from "./ProcessStep";
+import FeaturedTestimonial from "./FeaturedTestimonail";
+import TestimonialCard from "./TestimonialCard";
 import {
   SECTION_EYEBROW,
   SECTION_HEADING_LINES,
   SECTION_SUBHEADING,
-  PROCESS_STEPS,
+  FEATURED_TESTIMONIAL,
+  TESTIMONIALS,
 } from "./data";
 
 const headingVariants: Variants = {
@@ -16,7 +18,11 @@ const headingVariants: Variants = {
 
 const lineVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 const gridVariants: Variants = {
@@ -24,7 +30,7 @@ const gridVariants: Variants = {
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
 };
 
-const HowItWorksSection = () => {
+const TestimonialsSection = () => {
   return (
     <section className="relative pt-16 pb-28 md:pt-20 md:pb-36">
       <div className="mx-auto max-w-2xl px-6 text-center">
@@ -63,27 +69,27 @@ const HowItWorksSection = () => {
         </motion.p>
       </div>
 
+      <div className="mx-auto mt-16 max-w-4xl px-6">
+        <FeaturedTestimonial testimonial={FEATURED_TESTIMONIAL} />
+      </div>
+
       <motion.div
         variants={gridVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
-        className="relative mx-auto mt-20 max-w-6xl px-6"
+        className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-6 px-6 sm:grid-cols-2 lg:grid-cols-4"
       >
-        {/* desktop connecting line across all four columns */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-6 top-[13px] hidden h-px bg-white/10 sm:block"
-        />
-
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-4 sm:gap-6">
-          {PROCESS_STEPS.map((step) => (
-            <ProcessStep key={step.id} step={step} />
-          ))}
-        </div>
+        {TESTIMONIALS.map((testimonial, index) => (
+          <TestimonialCard
+            key={testimonial.id}
+            testimonial={testimonial}
+            offset={index % 2 === 1}
+          />
+        ))}
       </motion.div>
     </section>
   );
 };
 
-export default HowItWorksSection;
+export default TestimonialsSection;

@@ -1,12 +1,12 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import ProcessStep from "./ProcessStep";
+import PillarCard from "./PillarCard";
 import {
   SECTION_EYEBROW,
   SECTION_HEADING_LINES,
   SECTION_SUBHEADING,
-  PROCESS_STEPS,
+  PILLARS,
 } from "./data";
 
 const headingVariants: Variants = {
@@ -16,7 +16,11 @@ const headingVariants: Variants = {
 
 const lineVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 const gridVariants: Variants = {
@@ -24,7 +28,7 @@ const gridVariants: Variants = {
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
 };
 
-const HowItWorksSection = () => {
+const WhyChooseUsSection = () => {
   return (
     <section className="relative pt-16 pb-28 md:pt-20 md:pb-36">
       <div className="mx-auto max-w-2xl px-6 text-center">
@@ -70,15 +74,19 @@ const HowItWorksSection = () => {
         viewport={{ once: true, amount: 0.15 }}
         className="relative mx-auto mt-20 max-w-6xl px-6"
       >
-        {/* desktop connecting line across all four columns */}
+        {/* the system spine — one continuous line all four pillars branch from */}
         <div
           aria-hidden="true"
-          className="absolute inset-x-6 top-[13px] hidden h-px bg-white/10 sm:block"
+          className="absolute bottom-2 left-4 top-2 w-px bg-primary/20 lg:hidden"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-6 top-8 hidden h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent lg:block"
         />
 
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-4 sm:gap-6">
-          {PROCESS_STEPS.map((step) => (
-            <ProcessStep key={step.id} step={step} />
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-0">
+          {PILLARS.map((pillar) => (
+            <PillarCard key={pillar.id} pillar={pillar} />
           ))}
         </div>
       </motion.div>
@@ -86,4 +94,4 @@ const HowItWorksSection = () => {
   );
 };
 
-export default HowItWorksSection;
+export default WhyChooseUsSection;

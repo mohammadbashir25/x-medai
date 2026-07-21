@@ -22,7 +22,7 @@ const lineVariants: Variants = {
 
 const ProblemSolutionSection = () => {
   return (
-    <section className="py-28 md:py-40">
+    <section className="relative pt-16 pb-28 md:pt-20 md:pb-36">
       <div className="mx-auto max-w-2xl px-6 text-center">
         <motion.p
           initial={{ opacity: 0, y: 14 }}
