@@ -77,4 +77,7 @@ Small Text:     12–13px / text-muted */
       background: var(--color-background);
       color: var(--color-foreground);
    }
+   *{
+      box-sizing: border-box;
+   }
 }

@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-white/5 bg-footer">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-10 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-8 lg:px-10 lg:py-20">
         <div className="grid grid-cols-1 px-10 gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand block */}
           <div className="max-w-xs">
@@ -26,10 +26,16 @@ const Footer = () => {
 
           <FooterLinkGroup
             title="Navigation"
-            items={NAV_LINKS.map((link) => ({ label: link.name, href: link.href }))}
+            items={NAV_LINKS.map((link) => ({
+              label: link.name,
+              href: link.href,
+            }))}
           />
 
-          <FooterLinkGroup title="Services" items={SERVICES.map((service) => ({ label: service }))} />
+          <FooterLinkGroup
+            title="Services"
+            items={SERVICES.map((service) => ({ label: service }))}
+          />
 
           {/* Contact */}
           <div>
@@ -39,7 +45,7 @@ const Footer = () => {
             <p className="mt-5 text-sm leading-relaxed text-footer-foreground/70">
               {CONTACT_PROMPT}
             </p>
-            < a
+            <a
               href={`mailto:${CONTACT_EMAIL}`}
               className="mt-3 inline-block text-sm font-medium text-primary transition-colors duration-200 hover:text-accent"
             >
@@ -53,7 +59,9 @@ const Footer = () => {
           <p className="text-xs text-footer-foreground/40">
             © {year} xMedia. All rights reserved.
           </p>
-          <p className="text-xs text-footer-foreground/40">Systems built to perform.</p>
+          <p className="text-xs text-footer-foreground/40">
+            Systems built to perform.
+          </p>
         </div>
       </div>
     </footer>

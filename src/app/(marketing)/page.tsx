@@ -11,16 +11,14 @@ import WhyChooseUsSection from "../section/WhyChooseUs/WhyChooseUsSection";
 const Page = () => {
   return (
     <div className="">
-      <Container>
-        <Hero />
-        <ProblemSolutionSection />
-        <SectionDivider />
-        <HowItWorksSection />
-        <PortfolioSection />
-        <TestimonialsSection />
-        <WhyChooseUsSection />
-        <CTASection />
-      </Container>
+      <Hero />
+      <ProblemSolutionSection />
+      <SectionDivider />
+      <HowItWorksSection />
+      <PortfolioSection />
+      <TestimonialsSection />
+      <WhyChooseUsSection />
+      <CTASection />
     </div>
   );
 };
