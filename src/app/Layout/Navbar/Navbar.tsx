@@ -30,7 +30,7 @@ const Navbar = () => {
         animate="visible"
         className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6"
       >
-        <div className="mx-auto max-w-7xl px-9">
+        <div className="mx-auto max-w-7xl md:px-6 p-3 ">
           <div
             className={cn(
               "rounded-2xl border transition-all duration-500 ease-out",

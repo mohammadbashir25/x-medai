@@ -1,3 +1,4 @@
+import Container from "../components/ui/Container";
 import Footer from "../Layout/Footer/Footer";
 import Navbar from "../Layout/Navbar/Navbar";
 import CursorGlow from "../components/effects/CursorGlow";
@@ -10,11 +11,13 @@ export default function MarketingLayout({
 }) {
   return (
     <>
-      <CursorGlow />
-      <Navbar />
-      <main className="pt-20">{children}</main>
-      <WhatsappButton />
-      <Footer />
+      <Container>
+        <CursorGlow />
+        <Navbar />
+        <main className="pt-20">{children}</main>
+        <WhatsappButton />
+        <Footer />
+      </Container>
     </>
   );
 }

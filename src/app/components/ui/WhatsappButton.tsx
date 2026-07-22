@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 
-const DEFAULT_PHONE_NUMBER = "15551234567";
+const DEFAULT_PHONE_NUMBER = "+93729451613";
 const DEFAULT_MESSAGE = "Hi xMedia, I'd like to talk about a project.";
 
 type WhatsAppButtonProps = {
