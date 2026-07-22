@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import type { ServiceBlock as ServiceBlockType } from "./data/data";
+import type { ServiceBlock as ServiceBlockType } from "../data/data";
 import { cn } from "@/lib/utils";
 
 const ServiceBlock = ({
